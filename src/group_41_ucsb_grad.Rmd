@@ -5,8 +5,8 @@ date: "11/16/2021"
 output: html_document
 ---
 
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
+```{r setup, include=FALSE, warning = FALSE, message = FALSE}
+knitr::opts_chunk$set(echo = TRUE, warning = FALSE, message = FALSE)
 
 #attaching packages
 
@@ -26,5 +26,6 @@ ggplot(data = ucsb_grad, aes(x = year_abbr, y = domestic_enrollment)) +
        title = "Domestic Graduate Enrollment",) +
   theme_minimal()
 ```
+
  **Figure 1.** Each column represents a different year and colors denote ethnicity. Columns represent total enrollment population, with thickness of color band representing relative proportion of graduates enrolled.
  
