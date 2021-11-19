@@ -20,11 +20,16 @@ ucsb_grad <- read_csv(here("data", "ucsb_grad_data.csv"))
 ```
 ## Create column graph
 ```{r}
+palette1 <- c("purple", "yellow", "maroon", "red", "lightgreen", "blue", "orange", "pink", "grey", "lightblue")
+
 ggplot(data = ucsb_grad, aes(x = year_abbr, y = domestic_enrollment)) +
   geom_col(aes(fill = ethnicity), position = "fill") +
   labs(x = "Year", y = "Proportion of Enrollment",
-       title = "Domestic Graduate Enrollment (2008 - 2019)",) +
-  theme_minimal()
+       title = "Domestic Graduate Enrollment (2008 - 2019)",
+       legend = "Ethnicity") +
+  theme_minimal() + 
+  guides(fill = guide_legend(title= "Ethnicity")) +
+   scale_fill_manual (values = palette1)
 ```
 
  **Figure 1.** Each column represents a different year and colors denote ethnicity. Columns represent total enrollment population, with thickness of color band representing relative proportion of graduates enrolled.
