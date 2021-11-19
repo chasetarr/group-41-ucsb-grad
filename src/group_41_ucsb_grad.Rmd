@@ -5,6 +5,9 @@ date: "11/16/2021"
 output: html_document
 ---
 
+## Overview:
+ This data examines the Domestic Graduate Enrollment based on Ethnicity of individuals ranging from years 2008 - 2019. This data is pulled from the The UCSB Office of Budget and Planning Campus Profiles.
+ **Citation:** https://bap.ucsb.edu/institutional-research/campus-profiles
 ```{r setup, include=FALSE, warning = FALSE, message = FALSE}
 knitr::opts_chunk$set(echo = TRUE, warning = FALSE, message = FALSE)
 
@@ -30,6 +33,7 @@ ggplot(data = ucsb_grad, aes(x = year_abbr, y = domestic_enrollment)) +
   theme_minimal() + 
   guides(fill = guide_legend(title= "Ethnicity")) +
    scale_fill_manual (values = palette1)
+
 ```
 
  **Figure 1.** Each column represents a different year and colors denote ethnicity. Columns represent total enrollment population, with thickness of color band representing relative proportion of graduates enrolled.
